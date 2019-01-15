@@ -25,8 +25,28 @@ var skillsP2 = document.getElementById("Open-SkillsP2");
 var showHealthP1 = document.getElementById("ShowHealthP1");
 var showHealthP2 = document.getElementById("ShowHealthP2");
 
+var P1Pos = 0;
+var player1 = document.getElementById("P1");
+var introP = document.getElementById("introP");
+
+
 ///////////////////////////////////////////////////////////////////////////////
  
+BtnSolo.style.display = "none";
+BtnMulti.style.display = "none";
+
+function startTitle() {
+	setTimeout(function(){
+		BtnSolo.style.display = "inline-block";
+		BtnMulti.style.display = "inline-block";
+	}, 6000);
+
+	document.getElementById('blaster').onclick = false;
+	walk();
+	
+}
+
+
 function startSolo() {
 	leftSide.style.display = "block";
 	rightSide.style.display = "block";
@@ -34,6 +54,7 @@ function startSolo() {
 	BtnMulti.style.display = "none";
 	BtnBp2.disabled = true;
 	soloPlay = true;
+	introP.style.display = 'none';
 }
 
 function startMultiplayer() {
@@ -118,7 +139,7 @@ function AttackP1() {
 
 	///////////////////////////////////////////////////
 
-	showHealthP2.innerHTML = HealthP2 + " health remaining";
+	setTimeout(function(){ showHealthP2.innerHTML = HealthP2 + " health remaining"; }, 1850);
 
 	BtnBp1.disabled = true;
 	BtnBp2.disabled = false;
@@ -176,7 +197,11 @@ function HealP1() {
 	BtnBp1.disabled = true;
 	BtnBp2.disabled = false;
 
-	showHealthP1.innerHTML = HealthP1 + " health remaining";
+	setTimeout(function(){ showHealthP1.innerHTML = HealthP1 + " health remaining"; }, 900);
+
+	
+
+	healani();
 
 	if (soloPlay === true) {
 		AI();
@@ -210,7 +235,9 @@ function SpecialP1() {
 	BtnBp2.disabled = true;
 	BtnBp1.disabled = false;
 
-	showHealthP2.innerHTML = HealthP2 + " health remaining";
+	setTimeout(function(){ showHealthP2.innerHTML = HealthP2 + " health remaining"; }, 1800);
+
+		specialani();
 
 	if (soloPlay === true) {
 		AI();
@@ -241,7 +268,8 @@ function AttackP2() {
 
 	///////////////////////////////////////////////////
 
-	showHealthP1.innerHTML = HealthP1 + " health remaining";
+	
+	setTimeout(function(){ showHealthP1.innerHTML = HealthP1 + " health remaining"; }, 1850);
 
 	BtnBp2.disabled = true;
 	BtnBp1.disabled = false;
@@ -300,7 +328,10 @@ function HealP2() {
 	BtnBp2.disabled = true;
 	BtnBp1.disabled = false;
 
-	showHealthP2.innerHTML = HealthP2 + " health remaining";
+	
+	setTimeout(function(){ showHealthP2.innerHTML = HealthP2 + " health remaining"; }, 900);
+
+	healani2()
 }
 
 function SpecialP2() {
@@ -327,7 +358,10 @@ function SpecialP2() {
 	BtnBp2.disabled = true;
 	BtnBp1.disabled = false;
 
-	showHealthP2.innerHTML = HealthP2 + " health remaining";
+	specialani2();
+
+	
+	setTimeout(function(){ showHealthP2.innerHTML = HealthP2 + " health remaining"; }, 1800);
 
 }
 
@@ -337,7 +371,7 @@ function AI() {
 
 	if (HealthP2 > 10) {
 		if (bot <= 0.1) {
-			HealP2();
+			setTimeout(function(){ HealP2(); }, 2500);
 		}	
 
 		else if (bot <= 1) {
@@ -347,16 +381,16 @@ function AI() {
 	}
 	else{
 		if (bot <= 0.48) {
-			HealP2();
+			setTimeout(function(){ HealP2(); }, 2500);
 		}	
 
 		else if (bot <= 0.76 && special === true) {
-			SpecialP2();
+			setTimeout(function(){ Specialp2(); }, 2500);
 			special = false;
 		}
 
 		else if (bot <= 1) {
-			AttackP2();
+			setTimeout(function(){ AttackP2(); }, 2500);
 		}
 	}
 }
@@ -485,4 +519,79 @@ function deadani2() {
 	setTimeout(function(){ player2.src = "../resources/img/P2-dead/green__0025_dead_4.png"; }, 750);
 
 	setTimeout(function(){ player2.src = "../resources/img/P2-dead/green__0026_dead_5.png"; }, 850);
+}
+function specialani() {
+	var player1 = document.getElementById("P1");
+
+	setTimeout(function(){ player1.src = "../resources/img/P1-special/green__0031_attack_1.png"; }, 150);
+
+	setTimeout(function(){ player1.src = "../resources/img/P1-special/green__0032_attack_2.png"; }, 300);
+
+	setTimeout(function(){ player1.src = "../resources/img/P1-special/green__0033_attack_3.png"; }, 450);
+
+	setTimeout(function(){ player1.src = "../resources/img/P1-special/green__0034_attack_4.png"; }, 600);
+
+	setTimeout(function(){ player1.src = "../resources/img/idle.png"; }, 1800);
+
+}
+function specialani2() {
+	var player2 = document.getElementById("P2");
+
+	setTimeout(function(){ player2.src = "../resources/img/P2-special/green__0031_attack_1.png"; }, 150);
+
+	setTimeout(function(){ player2.src = "../resources/img/P2-special/green__0032_attack_2.png"; }, 300);
+
+	setTimeout(function(){ player2.src = "../resources/img/P2-special/green__0033_attack_3.png"; }, 450);
+
+	setTimeout(function(){ player2.src = "../resources/img/P2-special/green__0034_attack_4.png"; }, 600);
+
+	setTimeout(function(){ player2.src = "../resources/img/idle2.png"; }, 1800);
+}
+function healani() {
+	var player1 = document.getElementById("P1");
+
+	setTimeout(function(){ player1.src = "../resources/img/P1-heal/green__0027_jump_1.png"; }, 150);
+
+	setTimeout(function(){ player1.src = "../resources/img/P1-heal/green__0028_jump_2.png"; }, 300);
+
+	setTimeout(function(){ player1.src = "../resources/img/P1-heal/green__0029_jump_3.png"; }, 450);
+
+	setTimeout(function(){ player1.src = "../resources/img/P1-heal/green__0030_jump_4.png"; }, 600);
+
+	setTimeout(function(){ player1.src = "../resources/img/P1-heal/green__0027_jump_1.png"; }, 750);
+
+	setTimeout(function(){ player1.src = "../resources/img/idle.png"; }, 900);
+}
+
+function healani2() {
+	var player2 = document.getElementById("P2");
+
+	setTimeout(function(){ player2.src = "../resources/img/P2-heal/green__0027_jump_1.png"; }, 150);
+
+	setTimeout(function(){ player2.src = "../resources/img/P2-heal/green__0028_jump_2.png"; }, 300);
+
+	setTimeout(function(){ player2.src = "../resources/img/P2-heal/green__0029_jump_3.png"; }, 450);
+
+	setTimeout(function(){ player2.src = "../resources/img/P2-heal/green__0030_jump_4.png"; }, 600);
+
+	setTimeout(function(){ player2.src = "../resources/img/P2-heal/green__0027_jump_1.png"; }, 750);
+
+	setTimeout(function(){ player2.src = "../resources/img/idle2.png"; }, 900);
+}
+
+function walk(){
+	setTimeout(function(){
+		P1Pos = P1Pos + 0.5;
+		introP.style.left = P1Pos + '%';
+		if(P1Pos<= 22){
+			walk();
+		} 
+	},100);
+
+	if (P1Pos >= 22) {
+	setTimeout(function(){ introP.src = "../resources/img/P1-heal/green__0027_jump_1.png"; }, 550);
+	setTimeout(function(){ introP.src = "../resources/img/idle.png"; document.getElementById('blaster').style.display = "none";  }, 700);
+	}
+
+	
 }

@@ -7,8 +7,13 @@
 </head>
 <body>
 	
-
+<div>
+	<h1 id="title">Welkom to Alien Fighters</h1>
+	<button id="solo"> solo play </button>
+	<button id="Multiplayer"> multyplayer </button>
+</div>
 	<div id="LeftSide">
+		<p id="ShowHealthP1">25 health remaining</p>
 		<button id="BP1">Turn Player 1</button>
 		<div id="Open-SkillsP1">
 			<button id="AttackP1">Attack</button>
@@ -17,7 +22,7 @@
 			<br>
 			<button id="SpecialP1">Special</button>
 		</div>
-		<p id="ShowHealthP1">25 health remaining</p>
+		
 
 	<br>
 	<br>
@@ -32,13 +37,14 @@
 
 	</div>
 	<div id="RightSide">
+		<p id="ShowHealthP2">25 health remaining</p>
 		<button id="BP2">Turn Player 2</button>
 		<div id="Open-SkillsP2">
 			<button id="AttackP2">Attack</button>
 			<button id="HealP2">Heal</button>
 			<button id="SpecialP2">Special</button>
 		</div>
-		<p id="ShowHealthP2">25 health remaining</p>
+		
 	<br>
 	<br>
 
@@ -50,12 +56,9 @@
 		<img id="P2" src="../resources/img/idle2.png">
 	</div>
 
-	
+	<img src="../resources/img/blaster_1.png" id="blaster" onclick="startTitle()">
+	<img src="../resources/img/idle.png" id="introP" onclick="startTitle()">
 
-
-	<button id="solo"> solo play </button>
-	<button id="Multiplayer"> multyplayer </button>
-	
 	<script type="text/javascript" src="../resources/js/app.js"></script>
 </body>
 </html>
