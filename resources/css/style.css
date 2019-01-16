@@ -136,6 +136,160 @@ body, html{
 
 #introP{
 	position: absolute;
-	left: 0%;
+	left: 23%;
 	top: 620px;
+	display: none;
+}
+
+.bounce {
+    -webkit-animation:hover 6s linear;
+    -moz-animation:hover 6s linear;
+    animation:hover 6s linear;
+}
+
+@-moz-keyframes hover {
+       0% { top:600px; 
+    	 left: 0%;}
+    10% {
+        top:610px;
+        left: 3%;
+    }
+    20%{
+    	top:600px;
+        left: 6%;
+    }
+    30%{
+    	top:610px;
+        left: 9%;
+    }
+	40%{
+		top: 600px;
+		left: 12%;
+	}
+    50% {
+        top: 610px;
+        left: 15%;
+    }
+    60% { top:600px; 
+    	 left: 18%;
+    }
+    70% {
+        top:610px;
+        left: 21%;
+    }
+    80%{
+    	top:600px;
+        left: 23%;
+    }
+    90%{
+    	top:610px;
+        left: 23%;
+    }
+	100%{
+		top: 620px;
+		left: 23%
+	}
+}
+
+@-webkit-keyframes hover {
+     0% { top:600px; 
+    	 left: 0%;}
+    10% {
+        top:610px;
+        left: 3%;
+    }
+    20%{
+    	top:600px;
+        left: 6%;
+    }
+    30%{
+    	top:610px;
+        left: 9%;
+    }
+	40%{
+		top: 600px;
+		left: 12%;
+	}
+    50% {
+        top: 610px;
+        left: 15%;
+    }
+    60% { top:600px; 
+    	 left: 18%;
+    }
+    70% {
+        top:610px;
+        left: 21%;
+    }
+    80%{
+    	top:600px;
+        left: 23%;
+    }
+    90%{
+    	top:610px;
+        left: 23%;
+    }
+	100%{
+		top: 620px;
+		left: 23%
+	}
+}
+@keyframes hover {
+    0% { top:600px; 
+    	 left: 0%;}
+    10% {
+        top:610px;
+        left: 3%;
+    }
+    20%{
+    	top:600px;
+        left: 6%;
+    }
+    30%{
+    	top:610px;
+        left: 9%;
+    }
+	40%{
+		top: 600px;
+		left: 12%;
+	}
+    50% {
+        top: 610px;
+        left: 15%;
+    }
+    60% { top:600px; 
+    	 left: 18%;
+    }
+    70% {
+        top:610px;
+        left: 21%;
+    }
+    80%{
+    	top:600px;
+        left: 23%;
+    }
+    90%{
+    	top:610px;
+        left: 23%;
+    }
+	100%{
+		top: 620px;
+		left: 23%
+	}
+}
+
+
+.fadeIn {
+    -webkit-animation:fade 2.5s linear;
+    -moz-animation:fade 2.5s linear;
+    animation:fade 2.5s linear;
+}
+
+@keyframes fade {
+    0% { opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
